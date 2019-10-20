@@ -21,7 +21,7 @@ module.exports = function (port, method = 'tcp') {
           return match && match[0] && !acc.includes(match[0]) ? acc.concat(match[0]) : acc
         }, [])
 
-        return sh(`TaskKill /PID ${ports.join(' /PID ')}`)
+        return sh(`TaskKill /F /PID ${ports.join(' /PID ')}`)
       })
   }
 
